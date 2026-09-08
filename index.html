@@ -7,7 +7,7 @@
     <meta name="description" content="SJ Conseil accompagne les entreprises, écoles et professionnels sur les enjeux RH, management, recrutement, formation terrain et IA appliquée aux métiers.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -21,10 +21,11 @@
         <nav class="desktop-nav" aria-label="Navigation principale">
           <a href="#accueil">Accueil</a>
           <a href="#expertises">Expertises</a>
+          <a href="#ia">IA</a>
           <a href="#methode">Méthode</a>
           <a href="#references">Références</a>
           <a href="#apropos">À propos</a>
-          <a href="#contact">Contact</a>
+          <a class="nav-cta" href="#contact">Construire</a>
         </nav>
         <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" data-menu-toggle>
           <span></span>
@@ -36,6 +37,7 @@
     <nav class="mobile-menu" aria-label="Navigation mobile" data-mobile-menu>
       <a href="#accueil">Accueil</a>
       <a href="#expertises">Expertises</a>
+      <a href="#ia">IA</a>
       <a href="#methode">Méthode</a>
       <a href="#references">Références</a>
       <a href="#apropos">À propos</a>
@@ -50,8 +52,8 @@
         <div class="container hero-layout">
           <div class="hero-copy" data-reveal>
             <p class="eyebrow">RH · management · IA</p>
-            <h1>Du concret. Dès demain.</h1>
-            <p class="hero-lead">Formations, séminaires et accompagnements sur mesure en RH, management, recrutement et IA appliquée aux métiers.</p>
+            <h1>Former. Transformer. Faire pratiquer.</h1>
+            <p class="hero-lead">Des interventions RH, formation et IA conçues pour faire progresser les pratiques.</p>
             <div class="actions">
               <a class="button" href="#contact">Construire une formation</a>
               <a class="button secondary" href="#expertises">Découvrir les expertises</a>
@@ -60,11 +62,32 @@
 
           <div class="hero-proofs" aria-label="Chiffres clés SJ Conseil" data-reveal>
             <span>12+ ans d’expérience</span>
-            <span>Depuis 2019 avec SJ Conseil</span>
             <span>+4000 étudiants formés</span>
             <span>+100 professionnels formés</span>
             <span>Écoles · entreprises · professionnels</span>
-            <span>RH · management · IA</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="conversion-strip" aria-label="Points de départ">
+        <div class="container conversion-layout" data-reveal>
+          <p><span>Pas de formation catalogue.</span>Une intervention calibrée sur votre public, votre niveau et vos enjeux.</p>
+          <div class="conversion-links">
+            <a href="mailto:stephanie@sjconseil.fr?subject=Former%20une%20%C3%A9quipe%20avec%20SJ%20Conseil">
+              <small>01</small>
+              <strong>Former une équipe</strong>
+              <span>Faire monter en compétence avec du concret.</span>
+            </a>
+            <a href="mailto:stephanie@sjconseil.fr?subject=Structurer%20un%20enjeu%20RH%20avec%20SJ%20Conseil">
+              <small>02</small>
+              <strong>Structurer un enjeu RH</strong>
+              <span>Clarifier, cadrer, professionnaliser.</span>
+            </a>
+            <a href="mailto:stephanie@sjconseil.fr?subject=Int%C3%A9grer%20l%27IA%20dans%20mes%20pratiques">
+              <small>03</small>
+              <strong>Intégrer l’IA</strong>
+              <span>Accélérer les pratiques sans perdre le métier.</span>
+            </a>
           </div>
         </div>
       </section>
@@ -73,66 +96,78 @@
         <div class="container">
           <div class="section-heading narrow" data-reveal>
             <p class="eyebrow">Expertises</p>
-            <h2>Une offre structurée pour faire progresser les pratiques.</h2>
-            <p>Des interventions conçues pour relier les besoins terrain, la montée en compétences et l’impact opérationnel, sans perdre la précision RH.</p>
+            <h2>Des expertises pensées pour le terrain.</h2>
+            <p>Recrutement, carrière, formation, management et IA appliquée : des formats précis, utiles, activables.</p>
           </div>
 
-          <div class="expertise-editorial" data-reveal>
-            <article class="expertise-item">
-              <span>01</span>
-              <h3>Talents et recrutement</h3>
-              <p>Attirer, sélectionner et intégrer les bons profils avec méthode, justesse et impact.</p>
-              <ul>
-                <li>Recrutement et sourcing</li>
-                <li>Marque employeur</li>
-                <li>Expérience candidat</li>
-                <li>Onboarding</li>
-              </ul>
-            </article>
-            <article class="expertise-item">
-              <span>02</span>
-              <h3>Insertion professionnelle et carrière</h3>
-              <p>Accompagner les étudiants, jeunes professionnels et publics en transition dans leur recherche de stage, alternance, emploi ou évolution professionnelle.</p>
-              <ul>
-                <li>CV, LinkedIn et pitch professionnel</li>
-                <li>Préparation aux entretiens</li>
-                <li>Posture professionnelle</li>
-                <li>Recherche de stage, alternance ou emploi</li>
-              </ul>
-            </article>
-            <article class="expertise-item">
-              <span>03</span>
-              <h3>Formation et transmission</h3>
-              <p>Concevoir des formations terrain qui font pratiquer, progresser et repartir avec du concret.</p>
-              <ul>
-                <li>Ingénierie pédagogique</li>
-                <li>Animation de formations</li>
-                <li>Séminaires sur mesure</li>
-                <li>Pédagogie active</li>
-              </ul>
-            </article>
-            <article class="expertise-item">
-              <span>04</span>
-              <h3>Management et dynamiques d’équipe</h3>
-              <p>Accompagner les managers et les équipes dans leurs pratiques, leurs postures et leurs décisions.</p>
-              <ul>
-                <li>Leadership</li>
-                <li>Communication managériale</li>
-                <li>Cohésion d’équipe</li>
-                <li>Conduite du changement</li>
-              </ul>
-            </article>
-            <article class="expertise-item">
-              <span>05</span>
-              <h3>IA appliquée aux métiers</h3>
-              <p>Identifier les bons usages, gagner du temps et préserver la valeur ajoutée humaine.</p>
-              <ul>
-                <li>Prompt et usages IA</li>
-                <li>Automatisation raisonnée</li>
-                <li>RH augmentées</li>
-                <li>Éthique, RGPD et esprit critique</li>
-              </ul>
-            </article>
+          <div class="expertise-explorer" data-expertise-explorer data-reveal>
+            <div class="expertise-picto-row" aria-label="Expertises SJ Conseil">
+              <button class="expertise-picto" type="button" aria-label="Talents et recrutement" aria-pressed="false" data-expertise-target="expertise-recrutement">
+                <img src="assets/expertises/picto-recrutement.png" alt="" loading="lazy">
+                <span class="picto-reveal">
+                  <span class="picto-title">Talents et recrutement</span>
+                  <span class="picto-copy">Attirer, sélectionner et intégrer les bons profils avec méthode, justesse et impact.</span>
+                  <span class="picto-tags">
+                    <span>Recrutement et sourcing</span>
+                    <span>Marque employeur</span>
+                    <span>Expérience candidat</span>
+                    <span>Onboarding</span>
+                  </span>
+                </span>
+              </button>
+              <button class="expertise-picto" type="button" aria-label="Insertion professionnelle et carrière" aria-pressed="false" data-expertise-target="expertise-carriere">
+                <img src="assets/expertises/picto-carriere.png" alt="" loading="lazy">
+                <span class="picto-reveal">
+                  <span class="picto-title">Insertion professionnelle et carrière</span>
+                  <span class="picto-copy">Accompagner les étudiants, jeunes professionnels et publics en transition vers le stage, l’alternance, l’emploi ou l’évolution professionnelle.</span>
+                  <span class="picto-tags">
+                    <span>CV, LinkedIn et pitch professionnel</span>
+                    <span>Préparation aux entretiens</span>
+                    <span>Posture professionnelle</span>
+                    <span>Recherche de stage, alternance ou emploi</span>
+                  </span>
+                </span>
+              </button>
+              <button class="expertise-picto" type="button" aria-label="Formation et transmission" aria-pressed="false" data-expertise-target="expertise-formation">
+                <img src="assets/expertises/picto-formation.png" alt="" loading="lazy">
+                <span class="picto-reveal">
+                  <span class="picto-title">Formation et transmission</span>
+                  <span class="picto-copy">Concevoir des formations terrain qui font pratiquer, progresser et repartir avec du concret.</span>
+                  <span class="picto-tags">
+                    <span>Ingénierie pédagogique</span>
+                    <span>Animation de formations</span>
+                    <span>Séminaires sur mesure</span>
+                    <span>Pédagogie active</span>
+                  </span>
+                </span>
+              </button>
+              <button class="expertise-picto" type="button" aria-label="Management et dynamiques d'équipe" aria-pressed="false" data-expertise-target="expertise-management">
+                <img src="assets/expertises/picto-management.png" alt="" loading="lazy">
+                <span class="picto-reveal">
+                  <span class="picto-title">Management et dynamiques d’équipe</span>
+                  <span class="picto-copy">Accompagner les managers et les équipes dans leurs pratiques, leurs postures et leurs décisions.</span>
+                  <span class="picto-tags">
+                    <span>Leadership</span>
+                    <span>Communication managériale</span>
+                    <span>Cohésion d’équipe</span>
+                    <span>Conduite du changement</span>
+                  </span>
+                </span>
+              </button>
+              <button class="expertise-picto" type="button" aria-label="IA appliquée aux métiers" aria-pressed="false" data-expertise-target="expertise-ia">
+                <img src="assets/expertises/picto-ia.png" alt="" loading="lazy">
+                <span class="picto-reveal">
+                  <span class="picto-title">IA appliquée aux métiers</span>
+                  <span class="picto-copy">Identifier les bons usages, gagner du temps et préserver la valeur ajoutée humaine.</span>
+                  <span class="picto-tags">
+                    <span>Prompt et usages IA</span>
+                    <span>Automatisation raisonnée</span>
+                    <span>RH augmentées</span>
+                    <span>Éthique, RGPD et esprit critique</span>
+                  </span>
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -142,52 +177,51 @@
           <div class="section-title" data-reveal>
             <p class="eyebrow">IA appliquée</p>
             <h2>IA appliquée aux métiers</h2>
-            <p class="section-subtitle">Gagner du temps sans perdre sa valeur ajoutée.</p>
+            <p class="section-subtitle">Accélérer sans déléguer le discernement.</p>
           </div>
           <div class="copy-stack" data-reveal>
-            <p>L’IA transforme les façons de travailler. Mais la vraie question n’est pas de tout automatiser. La vraie question est : quelles tâches peuvent être accélérées par l’IA, et où l’humain doit-il garder toute sa valeur ?</p>
-            <p>SJ Conseil accompagne les RH, étudiants, formateurs, managers et professionnels dans une utilisation concrète, progressive et responsable de l’IA.</p>
-            <p>Objectif : mieux rédiger, mieux structurer, mieux analyser, mieux s’organiser — sans perdre le sens métier, l’esprit critique et la responsabilité humaine.</p>
+            <p>L’IA devient utile quand elle sert un métier, une décision, une pratique. Pas quand elle automatise sans cadre.</p>
+            <p>SJ Conseil forme les RH, managers, formateurs, étudiants et professionnels à des usages concrets, responsables et directement exploitables.</p>
           </div>
         </div>
 
         <div class="container ai-flow">
           <div class="ai-statement" data-reveal>
-            <h3>L’IA ne remplace pas le métier. Elle transforme les pratiques.</h3>
-            <p>L’IA peut aider à produire plus vite, structurer une idée, synthétiser, préparer un support ou automatiser certaines tâches répétitives. Mais elle ne remplace ni le discernement, ni la relation humaine, ni la décision, ni l’expérience terrain, ni la responsabilité professionnelle.</p>
-            <strong>Chez SJ Conseil, l’IA est abordée comme un levier : utile, concret, cadré.</strong>
+            <h3>L’IA ne remplace pas le métier. Elle élève les pratiques.</h3>
+            <p>Produire plus vite, structurer mieux, synthétiser, préparer, automatiser certaines tâches. Toujours avec méthode, regard critique et responsabilité humaine.</p>
+            <strong>Utile. Concrète. Cadrée.</strong>
           </div>
 
-          <div class="flow-block" data-reveal>
+          <div class="flow-block ai-progression" data-reveal>
             <div>
               <p class="eyebrow">Progression</p>
-              <h3>Des formations progressives, du premier prompt aux usages avancés.</h3>
+              <h3>Du premier prompt aux usages avancés.</h3>
             </div>
             <ol class="steps-line">
               <li>
                 <small>01</small>
-                <span>Découvrir</span>
-                <p>Comprendre les usages, les limites et les bons réflexes.</p>
+                <span>Fondamentaux IA</span>
+                <p>Comprendre les usages, les limites, les risques et les bons réflexes.</p>
               </li>
               <li>
                 <small>02</small>
-                <span>Prompter</span>
-                <p>Formuler des demandes efficaces et contextualisées.</p>
+                <span>Prompt métier</span>
+                <p>Formuler des demandes précises, contextualisées et directement exploitables.</p>
               </li>
               <li>
                 <small>03</small>
-                <span>Structurer</span>
-                <p>Organiser ses idées, ses supports et ses analyses.</p>
+                <span>Production assistée</span>
+                <p>Créer des contenus, supports, exercices, synthèses et plans d’action.</p>
               </li>
               <li>
                 <small>04</small>
-                <span>Créer</span>
-                <p>Produire des contenus, exercices, supports et scénarios.</p>
+                <span>Analyse et organisation</span>
+                <p>Structurer l’information, comparer, prioriser et gagner en clarté.</p>
               </li>
               <li>
                 <small>05</small>
-                <span>Automatiser</span>
-                <p>Identifier les tâches répétitives et cadrer les usages avancés.</p>
+                <span>Automatisation cadrée</span>
+                <p>Identifier les tâches répétitives et sécuriser les usages avancés.</p>
               </li>
             </ol>
           </div>
@@ -195,7 +229,7 @@
           <div class="flow-block" data-reveal>
             <div>
               <p class="eyebrow">Usages</p>
-              <h3>Des usages concrets selon les publics.</h3>
+              <h3>Des usages ciblés selon les publics.</h3>
             </div>
             <div class="audiences">
               <p><span>RH</span>Recrutement, sourcing, entretiens, GEPP, formation, marque employeur.</p>
@@ -206,8 +240,17 @@
           </div>
 
           <blockquote class="ai-quote" data-reveal>
-            <strong>Une IA utile, jamais automatique.</strong>
-            <p>L’IA peut accélérer. L’humain doit toujours cadrer, vérifier, décider et assumer.</p>
+            <div class="ai-quote-head">
+              <p class="eyebrow">Garde-fou</p>
+              <strong>Une IA utile, jamais automatique.</strong>
+              <p>L’IA peut accélérer. L’humain doit toujours cadrer, vérifier, décider et assumer.</p>
+            </div>
+            <div class="ai-control-line" aria-label="Principes d'utilisation de l'IA">
+              <span>Cadrer</span>
+              <span>Vérifier</span>
+              <span>Décider</span>
+              <span>Assumer</span>
+            </div>
             <ul aria-label="Réflexes à intégrer">
               <li>Confidentialité</li>
               <li>RGPD</li>
@@ -232,8 +275,8 @@
       <section class="section method-section" id="methode">
         <div class="container section-heading wide" data-reveal>
           <p class="eyebrow">Méthode</p>
-          <h2>Des formations terrain, conçues pour être utiles dès le lendemain.</h2>
-          <p>Les formations partent du réel : vos publics, vos contraintes, vos situations métier et vos objectifs opérationnels.</p>
+          <h2>Une méthode directe, exigeante, praticable.</h2>
+          <p>Des formats construits à partir de vos publics, vos contraintes et vos situations métier.</p>
         </div>
 
         <div class="container method-line">
@@ -259,18 +302,17 @@
           </article>
         </div>
 
-        <p class="container signature" data-reveal>Une formation terrain, ce n’est pas une salle qui écoute. C’est un groupe qui comprend, pratique et repart avec quelque chose à faire.</p>
+        <p class="container signature" data-reveal>Une formation réussie ne se mesure pas à ce qui a été dit. Elle se mesure à ce qui sera pratiqué.</p>
       </section>
 
       <section class="section field-section" id="terrain">
         <div class="container field-layout">
           <div class="section-title" data-reveal>
             <p class="eyebrow">Sur le terrain</p>
-            <h2>Des interventions qui font pratiquer.</h2>
+            <h2>Des formats qui mettent en mouvement.</h2>
           </div>
           <div class="copy-stack" data-reveal>
-            <p>Des formations, séminaires et ateliers conçus pour faire pratiquer, questionner et passer à l’action.</p>
-            <p>Le format s’adapte aux publics, aux objectifs et au niveau réel du groupe : étudiants, professionnels, équipes RH, managers ou formateurs.</p>
+            <p>Formations, séminaires et ateliers conçus pour questionner, expérimenter et passer à l’action.</p>
           </div>
         </div>
 
@@ -297,7 +339,7 @@
         <div class="container section-heading narrow" data-reveal>
           <p class="eyebrow">Références</p>
           <h2>Références & collaborations</h2>
-          <p>Entreprises, écoles et organisations accompagnées sur des sujets RH, recrutement, management, formation et IA appliquée.</p>
+          <p>Écoles, entreprises et organisations accompagnées sur des enjeux RH, formation, management et IA.</p>
         </div>
 
         <div class="logo-marquee" aria-label="Logos partenaires" data-reveal>
@@ -327,7 +369,7 @@
           </div>
         </div>
 
-        <p class="container references-note" data-reveal>Des interventions conçues pour relier les enjeux terrain, la pédagogie active et les transformations métiers.</p>
+        <p class="container references-note" data-reveal>Des interventions à la croisée du terrain, de la pédagogie active et des transformations métiers.</p>
       </section>
 
       <section class="section about-section" id="apropos">
@@ -340,13 +382,13 @@
             <p class="eyebrow">À propos</p>
             <h2>Stéphanie Beaufumé</h2>
             <p class="about-role">Consultante RH & formatrice — fondatrice de SJ Conseil</p>
-            <p>J’accompagne les écoles, entreprises et professionnels sur des sujets RH, recrutement, management, formation et IA appliquée aux métiers. Mon approche : des contenus structurés, des cas concrets, des mises en pratique et une exigence simple — que chacun reparte avec quelque chose d’utile dès le lendemain.</p>
-            <p>Après plus de 12 ans d’expérience terrain, et depuis 2019 avec SJ Conseil, je conçois des interventions sur mesure pour professionnaliser les pratiques, transmettre avec méthode et faire progresser durablement.</p>
+            <p>J’accompagne les écoles, entreprises et professionnels sur les sujets RH, recrutement, management, formation et IA appliquée.</p>
+            <p>Depuis 2019 avec SJ Conseil, je conçois des interventions sur mesure pour professionnaliser les pratiques, transmettre avec méthode et faire progresser durablement.</p>
 
             <div class="personal-note">
-              <h3>Et en dehors ?</h3>
-              <p>Une discipline sportive bien ancrée, une fidélité assumée à Alpine, un goût certain pour les univers puissants… et une exigence constante : faire progresser, avec sérieux, énergie et un peu de panache.</p>
-              <strong>Que la Force soit avec vous.</strong>
+              <h3>Signature</h3>
+              <p>Une présence directe, une exigence de clarté, une énergie de terrain.</p>
+              <strong>Faire pratiquer. Faire progresser.</strong>
             </div>
           </div>
         </div>
@@ -360,11 +402,29 @@
           </div>
 
           <div class="contact-main" data-reveal>
-            <p>Une formation.<br>Une conférence.<br>Un séminaire.<br>Un accompagnement sur mesure.</p>
+            <p>Un besoin à clarifier.<br>Une équipe à former.<br>Des pratiques à faire évoluer.</p>
             <div class="actions">
-              <a class="button" href="mailto:stephanie@sjconseil.fr">Me contacter</a>
+              <a class="button" href="mailto:stephanie@sjconseil.fr?subject=Construire%20une%20intervention%20avec%20SJ%20Conseil">Ouvrir l’échange</a>
               <a class="button secondary" href="mailto:stephanie@sjconseil.fr?subject=Construire%20une%20intervention%20avec%20SJ%20Conseil">Construire une intervention</a>
             </div>
+          </div>
+
+          <div class="contact-options" data-reveal aria-label="Sujets de contact">
+            <a href="mailto:stephanie@sjconseil.fr?subject=Formation%20RH%20ou%20management">
+              <span>01</span>
+              <strong>Former</strong>
+              <small>RH, management, posture professionnelle.</small>
+            </a>
+            <a href="mailto:stephanie@sjconseil.fr?subject=Formation%20IA%20appliqu%C3%A9e">
+              <span>02</span>
+              <strong>Acculturer à l’IA</strong>
+              <small>Usages concrets, cadre, responsabilité.</small>
+            </a>
+            <a href="mailto:stephanie@sjconseil.fr?subject=S%C3%A9minaire%20ou%20intervention%20sur%20mesure">
+              <span>03</span>
+              <strong>Créer un format</strong>
+              <small>Séminaire, atelier, conférence, parcours.</small>
+            </a>
           </div>
 
           <address class="contact-line" data-reveal>
@@ -391,6 +451,8 @@
         </div>
       </div>
     </footer>
+
+    <a class="floating-contact" href="#contact" aria-label="Aller au contact">Construire une intervention</a>
 
     <script src="script.js"></script>
   </body>

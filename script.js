@@ -4,6 +4,45 @@ const menuToggle = document.querySelector("[data-menu-toggle]");
 const mobileMenu = document.querySelector("[data-mobile-menu]");
 const navLinks = document.querySelectorAll('a[href^="#"]');
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const expertiseExplorer = document.querySelector("[data-expertise-explorer]");
+
+if (expertiseExplorer) {
+  const expertiseButtons = [...expertiseExplorer.querySelectorAll("[data-expertise-target]")];
+  const canHover = window.matchMedia("(hover: hover)").matches;
+
+  const setActiveExpertise = (targetId) => {
+    expertiseButtons.forEach((button) => {
+      const isActive = button.dataset.expertiseTarget === targetId;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", String(isActive));
+    });
+  };
+
+  const clearActiveExpertise = () => {
+    expertiseButtons.forEach((button) => {
+      button.classList.remove("is-active");
+      button.setAttribute("aria-pressed", "false");
+    });
+  };
+
+  expertiseButtons.forEach((button) => {
+    const targetId = button.dataset.expertiseTarget;
+
+    button.addEventListener("mouseenter", () => setActiveExpertise(targetId));
+    button.addEventListener("mouseleave", clearActiveExpertise);
+    button.addEventListener("focus", () => setActiveExpertise(targetId));
+    button.addEventListener("blur", clearActiveExpertise);
+    button.addEventListener("click", () => {
+      if (canHover) return;
+      const isAlreadyActive = button.classList.contains("is-active");
+      if (isAlreadyActive) {
+        clearActiveExpertise();
+      } else {
+        setActiveExpertise(targetId);
+      }
+    });
+  });
+}
 
 if (menuToggle && mobileMenu) {
   menuToggle.addEventListener("click", () => {
