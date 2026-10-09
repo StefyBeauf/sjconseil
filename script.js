@@ -4,45 +4,8 @@ const menuToggle = document.querySelector("[data-menu-toggle]");
 const mobileMenu = document.querySelector("[data-mobile-menu]");
 const navLinks = document.querySelectorAll('a[href^="#"]');
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-const expertiseExplorer = document.querySelector("[data-expertise-explorer]");
-
-if (expertiseExplorer) {
-  const expertiseButtons = [...expertiseExplorer.querySelectorAll("[data-expertise-target]")];
-  const canHover = window.matchMedia("(hover: hover)").matches;
-
-  const setActiveExpertise = (targetId) => {
-    expertiseButtons.forEach((button) => {
-      const isActive = button.dataset.expertiseTarget === targetId;
-      button.classList.toggle("is-active", isActive);
-      button.setAttribute("aria-pressed", String(isActive));
-    });
-  };
-
-  const clearActiveExpertise = () => {
-    expertiseButtons.forEach((button) => {
-      button.classList.remove("is-active");
-      button.setAttribute("aria-pressed", "false");
-    });
-  };
-
-  expertiseButtons.forEach((button) => {
-    const targetId = button.dataset.expertiseTarget;
-
-    button.addEventListener("mouseenter", () => setActiveExpertise(targetId));
-    button.addEventListener("mouseleave", clearActiveExpertise);
-    button.addEventListener("focus", () => setActiveExpertise(targetId));
-    button.addEventListener("blur", clearActiveExpertise);
-    button.addEventListener("click", () => {
-      if (canHover) return;
-      const isAlreadyActive = button.classList.contains("is-active");
-      if (isAlreadyActive) {
-        clearActiveExpertise();
-      } else {
-        setActiveExpertise(targetId);
-      }
-    });
-  });
-}
+const fieldCarousel = document.querySelector("[data-field-carousel]");
+const contactForm = document.querySelector("[data-contact-form]");
 
 if (menuToggle && mobileMenu) {
   menuToggle.addEventListener("click", () => {
@@ -79,6 +42,85 @@ navLinks.forEach((link) => {
     history.pushState(null, "", targetId);
   });
 });
+
+if (fieldCarousel) {
+  const track = fieldCarousel.querySelector(".field-track");
+  const prev = fieldCarousel.querySelector("[data-carousel-prev]");
+  const next = fieldCarousel.querySelector("[data-carousel-next]");
+  const slides = [...fieldCarousel.querySelectorAll(".field-slide")];
+
+  const getStep = () => {
+    const firstSlide = slides[0];
+    if (!firstSlide || !track) return 0;
+    const gap = parseFloat(window.getComputedStyle(track).columnGap || "0");
+    return firstSlide.getBoundingClientRect().width + gap;
+  };
+
+  prev?.addEventListener("click", () => {
+    track?.scrollBy({ left: -getStep(), behavior: reduceMotion ? "auto" : "smooth" });
+  });
+
+  next?.addEventListener("click", () => {
+    if (!track) return;
+    const maxScroll = track.scrollWidth - track.clientWidth - 4;
+    if (track.scrollLeft >= maxScroll) {
+      track.scrollTo({ left: 0, behavior: reduceMotion ? "auto" : "smooth" });
+      return;
+    }
+    track.scrollBy({ left: getStep(), behavior: reduceMotion ? "auto" : "smooth" });
+  });
+}
+
+const setContactNeed = (need) => {
+  if (!contactForm || !need) return;
+  const normalized = {
+    formation: "Une formation",
+    ia: "Une intervention sur l’IA",
+    cooperation: "Un accompagnement humain–IA",
+  }[need] || need;
+
+  const radio = [...contactForm.querySelectorAll('input[name="need"]')]
+    .find((input) => input.value === normalized);
+
+  if (radio) radio.checked = true;
+};
+
+document.querySelectorAll("[data-need]").forEach((link) => {
+  link.addEventListener("click", () => setContactNeed(link.dataset.need));
+});
+
+if (contactForm) {
+  const status = contactForm.querySelector("[data-form-status]");
+
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if (!contactForm.checkValidity()) {
+      status.textContent = "Merci de compléter les champs obligatoires avant de préparer le message.";
+      status.classList.remove("is-success");
+      status.classList.add("is-error");
+      contactForm.reportValidity();
+      return;
+    }
+
+    const data = new FormData(contactForm);
+    const subject = encodeURIComponent(`SJ Conseil - ${data.get("need")}`);
+    const bodyLines = [
+      `Besoin : ${data.get("need")}`,
+      `Nom : ${data.get("name")}`,
+      `E-mail : ${data.get("email")}`,
+      `Organisation : ${data.get("organization") || "Non renseignée"}`,
+      "",
+      "Message :",
+      data.get("message"),
+    ];
+
+    status.textContent = "Votre messagerie va s’ouvrir avec un message prérempli. L’envoi restera à valider par vous.";
+    status.classList.remove("is-error");
+    status.classList.add("is-success");
+    window.location.href = `mailto:stephanie@sjconseil.fr?subject=${subject}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
+  });
+}
 
 const revealItems = document.querySelectorAll("[data-reveal]");
 
