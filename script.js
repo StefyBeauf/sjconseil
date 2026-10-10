@@ -74,9 +74,11 @@ if (fieldCarousel) {
 const setContactNeed = (need) => {
   if (!contactForm || !need) return;
   const normalized = {
-    formation: "Une formation",
-    ia: "Une intervention sur l’IA",
-    cooperation: "Un accompagnement humain–IA",
+    formation: "Formation & RH",
+    ia: "Formation humain-IA",
+    diagnostic: "Diagnostic humain-IA",
+    cooperation: "Design de coopération humain-IA",
+    design: "Design de coopération humain-IA",
   }[need] || need;
 
   const radio = [...contactForm.querySelectorAll('input[name="need"]')]
@@ -94,6 +96,14 @@ if (contactForm) {
 
   contactForm.addEventListener("submit", (event) => {
     event.preventDefault();
+
+    const trap = contactForm.querySelector('input[name="website"]');
+    if (trap?.value) {
+      status.textContent = "Votre message n’a pas pu être préparé.";
+      status.classList.remove("is-success");
+      status.classList.add("is-error");
+      return;
+    }
 
     if (!contactForm.checkValidity()) {
       status.textContent = "Merci de compléter les champs obligatoires avant de préparer le message.";
