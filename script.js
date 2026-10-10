@@ -76,7 +76,7 @@ const setContactNeed = (need) => {
   const normalized = {
     formation: "Formation & RH",
     ia: "Formation métiers & IA",
-    diagnostic: "Diagnostic métiers & IA",
+    diagnostic: "Cadrage métiers & IA",
     cooperation: "Consulting évolution des métiers & IA",
     design: "Consulting évolution des métiers & IA",
   }[need] || need;

@@ -298,7 +298,6 @@ p {
 
 .two-columns,
 .ai-hero,
-.split-section,
 .contact-layout {
   display: grid;
   grid-template-columns: minmax(260px, 0.76fr) minmax(0, 1fr);
@@ -345,7 +344,7 @@ p {
 .hero-layout {
   position: relative;
   z-index: 1;
-  padding: clamp(70px, 8vw, 106px) 0 clamp(24px, 3vw, 42px);
+  padding: clamp(34px, 5vw, 66px) 0 clamp(40px, 6vw, 78px);
 }
 
 .hero-copy {
@@ -374,11 +373,13 @@ p {
 }
 
 .hero-frame {
-  padding-bottom: clamp(34px, 5vw, 70px);
+  width: 100%;
+  max-width: none;
+  padding: 0;
 }
 
 .offer-card span,
-.diagnostic-grid span {
+.value-grid span {
   color: var(--bronze-deep);
   font-size: 0.72rem;
   font-weight: 700;
@@ -419,14 +420,14 @@ p {
 .universe-panel {
   min-height: 0;
   display: grid;
-  grid-template-columns: minmax(190px, 0.44fr) minmax(0, 1fr);
-  gap: clamp(18px, 2.4vw, 30px);
+  grid-template-columns: minmax(260px, 0.58fr) minmax(0, 1fr);
+  gap: clamp(22px, 3vw, 44px);
   align-items: center;
   background: transparent;
 }
 
 .universe-panel figure {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 11;
   overflow: hidden;
 }
 
@@ -584,26 +585,27 @@ p {
 
 .conviction-panel {
   margin-top: clamp(34px, 5vw, 64px);
-  padding: clamp(30px, 4vw, 56px);
+  padding: clamp(8px, 1vw, 12px) 0 0 clamp(24px, 3vw, 42px);
   border: 0;
-  background: var(--charcoal);
+  border-left: 1px solid rgba(112, 85, 54, 0.28);
+  background: transparent;
 }
 
 .conviction-panel strong {
   display: block;
-  max-width: 900px;
-  color: var(--white);
+  max-width: 760px;
+  color: var(--ink);
   font-family: var(--serif);
-  font-size: clamp(1.7rem, 2.7vw, 3.15rem);
+  font-size: clamp(1.48rem, 2.15vw, 2.45rem);
   font-weight: 600;
-  line-height: 1;
+  line-height: 1.04;
 }
 
 .conviction-panel p {
-  max-width: 760px;
-  margin-top: 22px;
-  color: rgba(245, 240, 231, 0.7);
-  font-size: 1.04rem;
+  max-width: 680px;
+  margin-top: 18px;
+  color: rgba(23, 22, 21, 0.68);
+  font-size: 1rem;
 }
 
 .offer-grid {
@@ -615,7 +617,6 @@ p {
 }
 
 .offer-card,
-.diagnostic-grid article,
 .training-grid article,
 .value-grid p,
 .faq-section details {
@@ -652,7 +653,6 @@ p {
   color: var(--petrol);
 }
 
-.split-section,
 .training-grid,
 .value-section,
 .audience-section,
@@ -663,34 +663,11 @@ p {
   border-top: 0;
 }
 
-.split-section h3,
 .training-grid h3,
 .value-section h3,
 .ai-final-cta h3 {
   font-family: var(--serif);
   font-size: clamp(1.55rem, 2.2vw, 2.55rem);
-}
-
-.diagnostic-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(30px, 5vw, 70px);
-  border: 0;
-  background: transparent;
-}
-
-.diagnostic-grid article {
-  padding: 0;
-  border: 0;
-  background: transparent;
-  display: grid;
-  gap: 14px;
-}
-
-.diagnostic-grid small {
-  color: var(--bronze-deep);
-  font-weight: 600;
-  line-height: 1.5;
 }
 
 .training-grid {
@@ -1110,12 +1087,11 @@ p {
 
   .hero-art {
     position: relative;
-    min-height: 260px;
     margin-top: 0;
   }
 
   .hero-art::after {
-    background: linear-gradient(180deg, rgba(251, 248, 241, 0.05), rgba(251, 248, 241, 0.92));
+    display: none;
   }
 
   .hero-layout {
@@ -1127,12 +1103,10 @@ p {
   .proof-grid,
   .question-grid,
   .offer-grid,
-  .diagnostic-grid,
   .training-grid,
   .audience-section,
   .two-columns,
   .ai-hero,
-  .split-section,
   .field-layout,
   .about-layout,
   .contact-layout {
