@@ -75,10 +75,10 @@ const setContactNeed = (need) => {
   if (!contactForm || !need) return;
   const normalized = {
     formation: "Formation & RH",
-    ia: "Formation humain-IA",
-    diagnostic: "Diagnostic humain-IA",
-    cooperation: "Design de coopération humain-IA",
-    design: "Design de coopération humain-IA",
+    ia: "Formation métiers & IA",
+    diagnostic: "Diagnostic métiers & IA",
+    cooperation: "Consulting évolution des métiers & IA",
+    design: "Consulting évolution des métiers & IA",
   }[need] || need;
 
   const radio = [...contactForm.querySelectorAll('input[name="need"]')]
