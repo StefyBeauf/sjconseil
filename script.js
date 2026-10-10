@@ -5,6 +5,7 @@ const mobileMenu = document.querySelector("[data-mobile-menu]");
 const navLinks = document.querySelectorAll('a[href^="#"]');
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const fieldCarousel = document.querySelector("[data-field-carousel]");
+const logoCarousel = document.querySelector("[data-logo-carousel]");
 const contactForm = document.querySelector("[data-contact-form]");
 
 if (menuToggle && mobileMenu) {
@@ -71,12 +72,37 @@ if (fieldCarousel) {
   });
 }
 
+if (logoCarousel) {
+  const track = logoCarousel.querySelector(".logo-track");
+  const prev = logoCarousel.querySelector("[data-logo-prev]");
+  const next = logoCarousel.querySelector("[data-logo-next]");
+
+  const getStep = () => {
+    if (!track) return 0;
+    return Math.max(track.clientWidth * 0.65, 180);
+  };
+
+  prev?.addEventListener("click", () => {
+    track?.scrollBy({ left: -getStep(), behavior: reduceMotion ? "auto" : "smooth" });
+  });
+
+  next?.addEventListener("click", () => {
+    if (!track) return;
+    const maxScroll = track.scrollWidth - track.clientWidth - 4;
+    if (track.scrollLeft >= maxScroll) {
+      track.scrollTo({ left: 0, behavior: reduceMotion ? "auto" : "smooth" });
+      return;
+    }
+    track.scrollBy({ left: getStep(), behavior: reduceMotion ? "auto" : "smooth" });
+  });
+}
+
 const setContactNeed = (need) => {
   if (!contactForm || !need) return;
   const normalized = {
     formation: "Formation & RH",
-    ia: "Formation métiers & IA",
-    diagnostic: "Cadrage métiers & IA",
+    ia: "Consulting évolution des métiers & IA",
+    diagnostic: "Consulting évolution des métiers & IA",
     cooperation: "Consulting évolution des métiers & IA",
     design: "Consulting évolution des métiers & IA",
   }[need] || need;
